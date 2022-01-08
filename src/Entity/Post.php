@@ -62,6 +62,7 @@ class Post
     //Um Post para Varios COmentarios
     /**
      * @ORM\OneToMany(targetEntity="Comment", mappedBy="post")
+     * @ORM\OrderBy({"created_at" = "DESC"})
      */
     private $commentsCollection;
 

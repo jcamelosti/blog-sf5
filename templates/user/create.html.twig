@@ -4,7 +4,7 @@
 
 {% block body %}
 <div class="example-wrapper">
-    {{ form_start(form) }}
+    {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
     {{ form_widget(form) }}
     <button class="btn btn-lg btn-success" type="submit">Salvar</button>
     {{ form_end(form) }}

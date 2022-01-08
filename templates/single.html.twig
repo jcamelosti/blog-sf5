@@ -9,7 +9,7 @@
                     <div class="col-12">
                         <h2>{{ post.title }}</h2>
                         <small>Post criado em {{ post.createdAt|date("d/m/Y H:i:s") }}
-                            por {{ post.author.firstName }} | Comentários: {#{ post.commentsCollection.count() }#}</small>
+                            por {{ post.author.firstName }} | Comentários: {{ post.commentsCollection.count() }}</small>
                         <hr>
                     </div>
                 </div>
@@ -21,31 +21,31 @@
 
                 <div class="row">
 
-{#                    {% if post.commentsCollection.count() %}#}
-{#                        <div class="col-12">#}
-{#                            <h3>Comentários</h3>#}
-{#                            <hr>#}
-{#                            {% for comment in post.commentsCollection %}#}
-{#                                <div class="card">#}
-{#                                    <div class="card-body">#}
-{#                                        <strong>{{ comment.name }}</strong> - <strong>{{ comment.email }}</strong><br>#}
-{#                                        <small>Comentado em {{ comment.createdAt|date("d/m/Y H:i:s") }}</small>#}
-{#                                        <br>#}
-{#                                        {{ comment.comment }}#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            {% endfor %}#}
-{#                        </div>#}
-{#                    {% endif %}#}
+                   {% if post.commentsCollection.count() %}
+                       <div class="col-12">
+                           <h3>Comentários</h3>
+                           <hr>
+                            {% for comment in post.commentsCollection %}
+                                <div class="card">
+                                    <div class="card-body">
+                                        <strong>{{ comment.name }}</strong> - <strong>{{ comment.email }}</strong><br>
+                                        <small>Comentado em {{ comment.createdAt|date("d/m/Y H:i:s") }}</small>
+                                        <br />
+                                        {{ comment.comment }}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
 
-{#                    <div class="col-12">#}
-{#                        <hr>#}
-{#                        <h3>Deixar Comentário</h3>#}
-{#                        {{ form_start(form, {attr: {action: path('comment_save', {post_id : post.id }), novalidate: 'novalidate'}}) }}#}
-{#                        {{ form_widget(form) }}#}
-{#                        <button type="submit" class="btn btn-sm btn-success">Enviar Comentário</button>#}
-{#                        {{ form_end(form) }}#}
-{#                    </div>#}
+                    <div class="col-12">
+                        <hr />
+                        <h3>Deixar Comentário</h3>
+                        {{ form_start(form, {attr: {action: path('comment_save', {post_id : post.id }), novalidate: 'novalidate'}}) }}
+                        {{ form_widget(form) }}
+                        <button type="submit" class="btn btn-sm btn-success">Enviar Comentário</button>
+                        {{ form_end(form) }}
+                    </div>
                 </div>
             </div>
 
