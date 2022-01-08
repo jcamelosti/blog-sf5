@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\PostRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass=PostRepository::class)
@@ -36,6 +37,7 @@ class Post
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Gedmo\Slug(fields={"title"})
      */
     private $slug;
 
