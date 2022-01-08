@@ -43,8 +43,8 @@ class PostController extends AbstractController
 
         if($form->isSubmitted()){
             $post = $form->getData();
-            $post->setCreatedAt(new \DateTime('now', new \DateTimeZone('America/Sao_Paulo')));
-            $post->setUpdatedAt(new \DateTime('now', new \DateTimeZone('America/Sao_Paulo')));
+            /*$post->setCreatedAt(new \DateTime('now', new \DateTimeZone('America/Sao_Paulo')));
+            $post->setUpdatedAt(new \DateTime('now', new \DateTimeZone('America/Sao_Paulo')));*/
 
             /*$user = $this->getDoctrine()
                 ->getRepository(User::class)
@@ -112,7 +112,7 @@ class PostController extends AbstractController
 
         if($form->isSubmitted()){
             $post = $form->getData();
-            $post->setUpdatedAt(new \DateTime('now', new \DateTimeZone('America/Sao_Paulo')));
+            //$post->setUpdatedAt(new \DateTime('now', new \DateTimeZone('America/Sao_Paulo')));
 
             $manager = $this->getDoctrine()->getManager();
 
